@@ -4,7 +4,7 @@ RSpec.describe NotificationDecorator, type: :decorator do
   let(:notification) { build(:notification) }
 
   context "with serialization" do
-    let_it_be_readonly(:notification) { create(:notification).decorate }
+    let(:notification) { create(:notification).decorate }
 
     it "serializes both the decorated object IDs and decorated methods" do
       expected_result = { "id" => notification.id, "milestone_type" => notification.milestone_type }
