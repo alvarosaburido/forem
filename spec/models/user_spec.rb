@@ -968,8 +968,8 @@ RSpec.describe User, type: :model do
   end
 
   describe "#followed_articles" do
-    let(:another_user) { create(:user) }
-    let(:articles) { create_list(:article, 2, user: another_user) }
+    let!(:another_user) { create(:user) }
+    let!(:articles) { create_list(:article, 2, user: another_user) }
 
     before do
       user.follow(another_user)

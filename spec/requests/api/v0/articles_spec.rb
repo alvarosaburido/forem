@@ -8,6 +8,8 @@ RSpec.describe "Api::V0::Articles", type: :request do
   before { stub_const("FlareTag::FLARE_TAG_IDS_HASH", { "discuss" => tag.id }) }
 
   describe "GET /api/articles" do
+    before { article }
+
     it "returns CORS headers" do
       origin = "http://example.com"
       get api_articles_path, headers: { "origin": origin }
